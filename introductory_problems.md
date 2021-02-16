@@ -20,13 +20,6 @@ numbers = list(map(int,input().split()))
 print(n*(n+1)//2 - sum(numbers))
 ```
 
-### [Missing Number](https://cses.fi/problemset/task/1083)
-
-```python
-n = int(input())
-numbers = list(map(int,input().split()))
-print(n*(n+1)//2 - sum(numbers))
-```
 
 ### [Repetitions](https://cses.fi/problemset/task/1069)
 ```python
@@ -40,5 +33,17 @@ for i in range(1, len(string)):
     else:
         count = 1
 print(max_rep)
+```
 
+### [Increasing Array](https://cses.fi/problemset/task/1094/)
+```python
+n = int(input())
+array = list(map(int, input().split()))
+
+count = 0
+for i in range(1, n):
+    if array[i] < array[i - 1]:
+        count += array[i - 1] - array[i]
+        array[i] = array[i-1]
+print(count)
 ```
