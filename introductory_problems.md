@@ -28,7 +28,7 @@ numbers = list(map(int,input().split()))
 print(n*(n+1)//2 - sum(numbers))
 ```
 
-###[Repetitions](https://cses.fi/problemset/task/1069/)
+### [Repetitions](https://cses.fi/problemset/task/1069)
 ```python
 string = input()
 max_rep = 1
