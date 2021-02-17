@@ -47,3 +47,15 @@ for i in range(1, n):
         array[i] = array[i-1]
 print(count)
 ```
+
+### [Permutations](https://cses.fi/problemset/task/1070/)
+```python
+n = int(input())
+
+if 1 < n < 4:
+    print("NO SOLUTION")
+else:
+    a = [i * 2 if i <= n // 2 else (i - n // 2) * 2 - 1 for i in range(1, n + 1)]
+    print(*a)
+
+```
