@@ -57,5 +57,27 @@ if 1 < n < 4:
 else:
     a = [i * 2 if i <= n // 2 else (i - n // 2) * 2 - 1 for i in range(1, n + 1)]
     print(*a)
+```
 
+### [Number Spiral](https://cses.fi/problemset/result/1716950/)
+```python
+n = int(input())
+ 
+ 
+def squared_start_behind(i): return (i - 1) * (i - 1) + 1
+def squared_start(i): return i * i
+def seq_increasing(f, i, j): return f(i) + j - 1
+def seq_decreasing(f, i, j): return f(i) - j + 1
+ 
+ 
+def get_spiral_value(x, y):
+    if x <= y:
+        return seq_increasing(squared_start_behind, y, x) if y % 2 == 0 else seq_decreasing(squared_start, y, x)
+    else:
+        return seq_decreasing(squared_start, x, y) if x % 2 == 0 else seq_increasing(squared_start_behind, x, y)
+ 
+ 
+for _ in range(n):
+    x, y = map(int, input().split())
+    print(get_spiral_value(x, y))
 ```
