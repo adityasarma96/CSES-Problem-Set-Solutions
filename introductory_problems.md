@@ -81,3 +81,13 @@ for _ in range(n):
     x, y = map(int, input().split())
     print(get_spiral_value(x, y))
 ```
+
+###[Two Knights](https://cses.fi/problemset/result/1772823/)
+```python
+n = int(input())
+
+for k in range(1,n+1):
+    total_ways = ((k * k) * (k * k - 1)) // 2
+    attacking_ways = 4 * (k - 1) * (k - 2)
+    print(total_ways - attacking_ways)
+```
